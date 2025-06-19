@@ -34,7 +34,7 @@ Antes de iniciar la aplicación, asegúrate de tener instalado:
 1.  **Clona el repositorio:**
 
     ```bash
-    git clone [https://github.com/tu-usuario/nombre-de-tu-repo.git](https://github.com/tu-usuario/nombre-de-tu-repo.git)
+    git clone [https://github.com/martintribuzio/istea-programacion1-todo](https://github.com/martintribuzio/istea-programacion1-todo)
     cd nombre-de-tu-repo
     ```
 
@@ -53,15 +53,11 @@ Antes de iniciar la aplicación, asegúrate de tener instalado:
     ```
 
 4.  **Crea el archivo de variables de entorno:**
-    Crea un archivo llamado `.env` en la raíz del proyecto y añade tus credenciales y clave secreta. **¡No subas este archivo a Git!**
+    Crea un archivo llamado `.env` en la raíz del proyecto a partir del archivo `.env.example` y configura las variables necesarias:
 
+    ```bash
+    cp .env.example .env
     ```
-    SECRET_KEY=tu_clave_secreta_aleatoria_y_compleja_aqui
-    DATABASE_URL=postgresql://postgres:mysecretpassword@localhost:5432/flask_db
-    ```
-
-    - Reemplaza `tu_clave_secreta_aleatoria_y_compleja_aqui` con una cadena aleatoria y muy segura (ej. `python -c "import os; print(os.urandom(24).hex())"`).
-    - Asegúrate de que `DATABASE_URL` apunte a tu base de datos PostgreSQL en Docker.
 
 5.  **Inicializa la base de datos:**
     Este paso creará las tablas `users` y `tasks` en tu base de datos PostgreSQL.
@@ -84,16 +80,6 @@ Antes de iniciar la aplicación, asegúrate de tener instalado:
 2.  **Inicio de Sesión:** Una vez registrado, inicia sesión en `/login` con tus credenciales.
 3.  **Gestión de Tareas:** Después de iniciar sesión, podrás ver tu lista de tareas personalizada en la página principal (`/`). Puedes añadir nuevas tareas y eliminarlas.
 4.  **Cierre de Sesión:** Haz clic en "Cerrar Sesión" en la barra de navegación para cerrar tu sesión.
-
-## Contribuciones
-
-Si alguien desea contribuir al proyecto, por favor, sigue estos pasos:
-
-1.  Haz un "fork" del repositorio.
-2.  Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
-3.  Realiza tus cambios y haz commits descriptivos.
-4.  Envía tus cambios a tu "fork" (`git push origin feature/nueva-funcionalidad`).
-5.  Abre un "Pull Request" a la rama `main` de este repositorio.
 
 ## Licencia
 

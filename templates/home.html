@@ -2,7 +2,7 @@
 %}
 <h1>My Tasks</h1>
 {% if user %}
-<form method="POST" action="{{ url_for('main.add_task') }}" class="mb-3">
+<form method="POST" action="{{ url_for('main.createTask') }}" class="mb-3">
   <input
     name="task"
     type="text"
@@ -31,7 +31,7 @@
     {{ task.content }} {# Accedemos al atributo 'content' del objeto Task #}
     <form
       method="POST"
-      action="{{ url_for('main.delete_task', task_id=task.id) }}"
+      action="{{ url_for('main.deleteTask', taskId=task.id) }}"
     >
       <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
     </form>

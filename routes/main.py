@@ -12,9 +12,9 @@ def home():
 
     if 'user_id' in session:
         userId = session['user_id']
-        currentUser = User.query.get(userId)
+        user = User.query.get(userId)
 
-        if currentUser:
+        if user:
             tasks = user.tasks
         else:
             session.pop('user_id', None)
@@ -44,7 +44,7 @@ def createTask():
 
 
 @mainBP.route('/task/delete/<int:taskId>', methods=['POST'])
-def delete_task(taskId):
+def deleteTask(taskId):
     if 'user_id' not in session:
         flash('Tenes que iniciar sesion para eliminar tareas', 'error')
         return redirect(url_for('auth.login'))
