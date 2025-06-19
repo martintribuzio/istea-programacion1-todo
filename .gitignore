@@ -1,0 +1,21 @@
+# Ignorar el entorno virtual de Python
+venv/
+
+# Ignorar archivos de caché de Python
+__pycache__/
+*.pyc
+
+# Ignorar el archivo .env donde guardamos variables de entorno sensibles
+.env
+
+# Ignorar bases de datos SQLite (si llegaras a usarla para algo, pero ya no es tu caso principal)
+*.db
+*.sqlite
+*.sqlite3
+
+# Ignorar archivos de Pytest (si usas pruebas)
+.pytest_cache/
+.coverage
+
+# Ignorar logs
+*.log

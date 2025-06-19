@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block title %}Inicio{% endblock %} {% block content
+%}
+<h1>My Tasks</h1>
+{% if user %}
+<form method="POST" action="{{ url_for('main.add_task') }}" class="mb-3">
+  <input
+    name="task"
+    type="text"
+    id="task"
+    class="form-control"
+    placeholder="Nueva tarea"
+    required
+  />
+  <button class="btn btn-primary mt-2">Agregar</button>
+</form>
+{% else %}
+<p>
+  Por favor, <a href="{{ url_for('auth.login') }}">inicia sesión</a> o
+  <a href="{{ url_for('auth.register') }}">regístrate</a> para empezar a añadir
+  tareas.
+</p>
+{% endif %}
+
+<ul class="list-group">
+  {% if tasks|length == 0 %}
+  <li class="list-group-item">No hay tareas pendientes.</li>
+  {% else %}
+  <li class="list-group-item">Tareas pendientes:</li>
+  {% for task in tasks %}
+  <li class="list-group-item d-flex justify-content-between">
+    {{ task.content }} {# Accedemos al atributo 'content' del objeto Task #}
+    <form
+      method="POST"
+      action="{{ url_for('main.delete_task', task_id=task.id) }}"
+    >
+      <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+    </form>
+  </li>
+  {% endfor %} {% endif %}
+</ul>
+{% endblock %}
