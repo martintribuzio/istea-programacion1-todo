@@ -21,9 +21,7 @@ class User(db.Model):
 
     # Métodos para manejar contraseñas de forma segura
     def setPassword(self, password):
-        # self.password_hash = generate_password_hash(password)
-        self.password_hash = password
+        self.password_hash = generate_password_hash(password)
 
     def checkPassword(self, password):
-        # return check_password_hash(self.password_hash, password)
-        return self.password_hash == password
+        return check_password_hash(self.password_hash, password)

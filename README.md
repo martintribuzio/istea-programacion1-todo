@@ -35,7 +35,7 @@ Antes de iniciar la aplicación, asegúrate de tener instalado:
 
     ```bash
     git clone [https://github.com/martintribuzio/istea-programacion1-todo](https://github.com/martintribuzio/istea-programacion1-todo)
-    cd nombre-de-tu-repo
+    cd istea-programacion1-todo
     ```
 
 2.  **Crea y activa un entorno virtual:**
@@ -66,21 +66,9 @@ Antes de iniciar la aplicación, asegúrate de tener instalado:
     python app.py
     ```
 
-    Verás que la aplicación se inicia y luego puedes cerrarla (`Ctrl+C`). Este comando es solo para la creación inicial de las tablas.
-
-6.  **Ejecuta la aplicación Flask:**
-    ```bash
-    flask run
-    ```
-    La aplicación debería estar disponible en `http://127.0.0.1:5000/`.
-
 ## Uso de la Aplicación
 
 1.  **Registro:** Navega a `/register` para crear una nueva cuenta de usuario.
 2.  **Inicio de Sesión:** Una vez registrado, inicia sesión en `/login` con tus credenciales.
 3.  **Gestión de Tareas:** Después de iniciar sesión, podrás ver tu lista de tareas personalizada en la página principal (`/`). Puedes añadir nuevas tareas y eliminarlas.
 4.  **Cierre de Sesión:** Haz clic en "Cerrar Sesión" en la barra de navegación para cerrar tu sesión.
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. (Puedes cambiar esto si lo deseas).
