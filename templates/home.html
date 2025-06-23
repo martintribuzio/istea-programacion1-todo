@@ -1,7 +1,6 @@
-{% extends "base.html" %} {% block title %}Inicio{% endblock %} {% block content
-%}
-<h1>My Tasks</h1>
-{% if user %}
+{% extends "base.html" %} {% block title %}Inicio{% endblock %} {% block
+content%} {% if user %}
+<h1>Mis tareas</h1>
 <form method="POST" action="{{ url_for('main.createTask') }}" class="mb-3">
   <input
     name="task"
@@ -19,8 +18,7 @@
   <a href="{{ url_for('auth.register') }}">regístrate</a> para empezar a añadir
   tareas.
 </p>
-{% endif %}
-
+{% endif %} {% if user %}
 <ul class="list-group">
   {% if tasks|length == 0 %}
   <li class="list-group-item">No hay tareas pendientes.</li>
@@ -38,4 +36,4 @@
   </li>
   {% endfor %} {% endif %}
 </ul>
-{% endblock %}
+{% endif %} {% endblock %}
